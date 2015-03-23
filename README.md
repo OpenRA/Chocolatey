@@ -18,10 +18,16 @@ Playtests provide a preview of the latest improvements for players who want to h
 PS> choco install openra-playtest -pre
 ```
 
-## Packaging
+## Publishing
 
 For developers...
 
 ```
 PS> Get-ChildItem *.nuspec -Recurse | %{ choco pack $_.FullName }
+```
+
+Inspect the packages using the [NuGet Package Explorer](https://chocolatey.org/packages/NugetPackageExplorer) and, when you're ready, publish!
+
+```
+PS> Get-ChildItem *.nupkg | %{ choco push $_.FullName }
 ```
