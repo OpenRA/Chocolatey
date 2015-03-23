@@ -20,6 +20,6 @@ Playtests provide a preview of the latest improvements for players who want to h
     <tags>open rts red-alert command-and-conquer</tags>
     <licenseUrl>http://www.openra.net/license/</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>http://anthonymastrean.github.io/chocolateypackages/icons/openra.png</iconUrl>
+    <iconUrl>https://cdn.rawgit.com/OpenRA/Chocolatey/master/icons/openra.png</iconUrl>
   </metadata>
 </package>
