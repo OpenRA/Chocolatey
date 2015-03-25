@@ -13,7 +13,7 @@ We include recreations of C&amp;C (Tiberian Dawn), C&amp;C: Red Alert, and Dune 
 OpenRA's primary focus is cross-platform multiplayer between Windows, OS X, and Linux; however, we include a number of single-player missions, and also support skirmish games against AI bots.
     </description>
     <projectUrl>http://www.openra.net/</projectUrl>
-    <tags>open rts red-alert command-and-conquer</tags>
+    <tags>games open rts red-alert command-and-conquer</tags>
     <licenseUrl>http://www.openra.net/license/</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://cdn.rawgit.com/OpenRA/Chocolatey/master/icons/openra.png</iconUrl>
