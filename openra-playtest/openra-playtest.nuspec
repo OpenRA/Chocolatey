@@ -17,7 +17,7 @@ OpenRA's primary focus is cross-platform multiplayer between Windows, OS X, and 
 Playtests provide a preview of the latest improvements for players who want to help test and shape the future releases of OpenRA.
     </description>
     <projectUrl>http://www.openra.net/</projectUrl>
-    <tags>open rts red-alert command-and-conquer</tags>
+    <tags>games open rts red-alert command-and-conquer</tags>
     <licenseUrl>http://www.openra.net/license/</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://cdn.rawgit.com/OpenRA/Chocolatey/master/icons/openra.png</iconUrl>
