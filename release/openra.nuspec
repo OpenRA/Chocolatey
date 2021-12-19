@@ -27,7 +27,7 @@ OpenRA's primary focus is cross-platform multiplayer between Windows, OS X, and 
     <projectSourceUrl>https://github.com/OpenRA/OpenRA</projectSourceUrl>
     <bugTrackerUrl>https://github.com/OpenRA/OpenRA/issues</bugTrackerUrl>
     <docsUrl>https://github.com/OpenRA/OpenRA/wiki</docsUrl>
-    <iconUrl>https://raw.githubusercontent.com/OpenRA/OpenRA/bleed/packaging/artwork/ra_512x512.png</iconUrl>
+    <iconUrl>https://www.openra.net/images/icons/chocolatey/ra_128x128.png</iconUrl>
     <tags>game rts red-alert command-and-conquer dune-2000 real-time-strategy</tags>
     <copyright>© 2007 OpenRA Developers</copyright>
     <licenseUrl>https://github.com/OpenRA/OpenRA/blob/bleed/COPYING</licenseUrl>
