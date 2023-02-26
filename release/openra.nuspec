@@ -3,7 +3,7 @@
   <metadata>
     <id>openra</id>
     <title>OpenRA</title>
-    <version>2021.03.21</version> 
+    <version>{VERSION}</version>
     <authors>OpenRA Developers</authors>
     <owners>Mailaender</owners>
     <summary>Free, real-time strategy game engine supporting early Westwood classics</summary>
@@ -19,14 +19,14 @@ OpenRA's primary focus is cross-platform multiplayer between Windows, OS X, and 
 * [Discord](https://discord.openra.net/)
 * [IRC](https://web.libera.chat/#openra)
 * [Facebook](https://www.facebook.com/openra)
-* [Twitter](http://twitter.com/openRA)
-* [Reddit](http://www.reddit.com/r/openra)
+* [Twitter](https://twitter.com/openRA)
+* [Reddit](https://www.reddit.com/r/openra)
     </description>
     <packageSourceUrl>https://github.com/OpenRA/Chocolatey</packageSourceUrl>
     <projectUrl>https://www.openra.net/</projectUrl>
     <projectSourceUrl>https://github.com/OpenRA/OpenRA</projectSourceUrl>
-    <bugTrackerUrl>https://github.com/OpenRA/OpenRA/issues</bugTrackerUrl>
-    <docsUrl>https://github.com/OpenRA/OpenRA/wiki</docsUrl>
+    <bugTrackerUrl>https://bugs.openra.net/</bugTrackerUrl>
+    <docsUrl>https://wiki.openra.net/</docsUrl>
     <iconUrl>https://www.openra.net/images/icons/chocolatey/ra_128x128.png</iconUrl>
     <tags>game rts red-alert command-and-conquer dune-2000 real-time-strategy</tags>
     <copyright>© 2007 OpenRA Developers</copyright>
@@ -34,11 +34,8 @@ OpenRA's primary focus is cross-platform multiplayer between Windows, OS X, and 
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <releaseNotes>
 * [News](https://www.openra.net/news/)
-* [Changelog](https://github.com/OpenRA/OpenRA/wiki/Changelog)
+* [Changelog](https://changelog.openra.net/)
     </releaseNotes>
-    <dependencies>
-      <dependency id="dotnetfx" />
-    </dependencies>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
