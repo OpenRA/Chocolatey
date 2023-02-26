@@ -40,7 +40,7 @@ jobs:
         id: version
         run: |
           tag=${{ github.event.inputs.tag }}
-          version="${tag:0:4}.${tag:4:2}.${tag:6:2}"
+          version="${tag:8:4}.${tag:12:2}.${tag:14:2}"
           echo "::set-output name=nuget::$version"
           sed -i "s/{VERSION}/${version}/g" "openra.nuspec"
 
