@@ -1,0 +1,55 @@
+name: Update Chocolatey
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Tag'
+        required: true
+        default: release-XXXXXXXX
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  chocolatey:
+    name: Deploy to chocolatey.org
+    runs-on: windows-latest
+    if: github.repository == 'OpenRA/Chocolatey'
+    steps:
+      - name: Clone Repository
+        uses: actions/checkout@v3
+
+      - name: Set Checksum
+        run: |
+          filename="OpenRA-${{ github.event.inputs.tag }}-x86.exe"
+          url="https://github.com/OpenRA/OpenRA/releases/download/${{ github.event.inputs.tag }}/${filename}"
+          sed -i "s#{URL32}#${url}#g" "tools/chocolateyinstall.ps1"
+          curl -sSL "${url}" -o "packaging/windows/${filename}"
+          md5=$(cat "packaging/windows/${filename}" | md5sum -)
+          sed -i "s/{MD5CHECKSUM32}/${md5:0:32}/g" "tools/chocolateyinstall.ps1"
+          filename="OpenRA-${{ github.event.inputs.tag }}-x64.exe"
+          url="https://github.com/OpenRA/OpenRA/releases/download/${{ github.event.inputs.tag }}/${filename}"
+          sed -i "s#{URL64}#${url}#g" "tools/chocolateyinstall.ps1"
+          curl -sSL "${url}" -o "packaging/windows/${filename}"
+          md5=$(cat "packaging/windows/${filename}" | md5sum -)
+          sed -i "s/{MD5CHECKSUM64}/${md5:0:32}/g" "tools/chocolateyinstall.ps1"
+
+      - name: Set Version
+        id: version
+        run: |
+          tag=${{ github.event.inputs.tag }}
+          version="${tag:0:4}.${tag:4:2}.${tag:6:2}"
+          echo "::set-output name=nuget::$version"
+          sed -i "s/{VERSION}/${version}/g" "openra.nuspec"
+
+      - name: Pack Release
+        uses: crazy-max/ghaction-chocolatey@v2
+        with:
+          args: pack release/openra.nuspec --outputdirectory release
+
+      - name: Upload Release
+        uses: crazy-max/ghaction-chocolatey@v2
+        with:
+          args: push release/openra.${{ steps.version.outputs.nuget }}.nupkg -s https://push.chocolatey.org/ -k ${{ secrets.CHOCO_KEY }}

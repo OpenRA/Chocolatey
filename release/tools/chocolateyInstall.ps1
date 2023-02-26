@@ -1,15 +1,17 @@
-﻿$packageName = 'openra'
-$installerType = 'exe'
-$silentArgs = '/S'
-$url = 'https://github.com/OpenRA/OpenRA/releases/download/release-20210321/OpenRA-release-20210321-x64.exe'
-$checksum = '77accf828ac7f02e87c4f0e32cfa95d1'
-$checksumType = 'md5'
-$validExitCodes = @(0)
+﻿$toolsPath = Split-Path -parent $MyInvocation.MyCommand.Definition
 
-Install-ChocolateyPackage -PackageName "$packageName" `
-                          -FileType "$installerType" `
-                          -SilentArgs "$silentArgs" `
-                          -Url "$url" `
-                          -ValidExitCodes $validExitCodes `
-                          -Checksum "$checksum" `
-                          -ChecksumType "$checksumType"
+$packageArgs = @{
+  packageName    = $env:ChocolateyPackageName
+  fileType       = 'exe'
+  url            = '{URL32}'
+  checksum       = '{MD5CHECKSUM32}'
+  checksumType   = 'md5'
+  url64Bit       = '{URL64}'
+  checksum64     = '{MD5CHECKSUM64}'
+  checksumType64 = 'md5'
+  softwareName   = 'OpenRA'
+  silentArgs     = '/S'
+  validExitCodes = @(0)
+}
+
+Install-ChocolateyPackage @packageArgs
