@@ -45,11 +45,10 @@ jobs:
           sed -i "s/{VERSION}/${version}/g" "openra.nuspec"
 
       - name: Pack Release
-        uses: crazy-max/ghaction-chocolatey@v2
-        with:
-          args: pack openra.nuspec
+        run: |
+          choco pack openra.nuspec
 
       - name: Upload Release
-        uses: crazy-max/ghaction-chocolatey@v2
-        with:
-          args: push openra.${{ steps.version.outputs.nuget }}.nupkg -s https://push.chocolatey.org/ -k ${{ secrets.CHOCO_KEY }}
+        run: |
+          package=$(find . -type f -name "*.nupkg")
+          choco push $package -s https://push.chocolatey.org/ -k ${{ secrets.CHOCO_KEY }} --allow-unofficial
