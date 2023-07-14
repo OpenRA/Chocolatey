@@ -41,7 +41,7 @@ jobs:
         run: |
           tag=${{ github.event.inputs.tag }}
           version="${tag:8:4}.${tag:12:2}.${tag:14:2}"
-          echo "::set-output name=nuget::$version"
+          echo "nuget=$version" >> $GITHUB_OUTPUT
           sed -i "s/{VERSION}/${version}/g" "openra.nuspec"
 
       - name: Pack Release
