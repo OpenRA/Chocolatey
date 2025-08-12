@@ -19,7 +19,7 @@ jobs:
     if: github.repository == 'OpenRA/Chocolatey'
     steps:
       - name: Clone Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
 
       - name: Set Checksum
         run: |
